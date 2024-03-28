@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Moment 1</title>
     <link rel="stylesheet" href="css/stylesheet.css">
 </head>
+
 <body>
     <header>
         <h1>Startsida</h1>
@@ -20,8 +22,25 @@
     </header>
 
     <form action="">
-
+        <label for="course-code"></label>
+        <br>
+        <input type="text" id="course-code" name="course-code">
+        <br>
+        <label for="course-name"></label>
+        <input type="text" id="course-name" name="course-name">
+        <br>
+        <label for="syllabus"></label>
+        <input type="text" id="syllabus" name="syllabus">
+        <br>
+        <label for="progression"></label>
+        <select name="progression" id="progression">
+            <option value="A">A</option>
+            <option value="B">B</option>
+        </select>
+        <br>
+        <input type="submit" value="Lägg till ny kurs">
     </form>
-    
+
 </body>
+
 </html>

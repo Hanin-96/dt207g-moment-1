@@ -30,7 +30,7 @@ client.connect((error) => {
     }
 });
 
-//Routing
+//Routing index.ejs
 app.get("/", async(req, res) => {
     res.render("index");
 });
@@ -39,4 +39,9 @@ app.get("/", async(req, res) => {
 //Starta igång server
 app.listen(process.env.PORT, () => {
     console.log("servern är startad på port: " + process.env.PORT );
+});
+
+//Routing Course.ejs
+app.get("/course", async(req, res) => {
+    res.render("course");
 });
