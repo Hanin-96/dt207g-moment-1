@@ -11,11 +11,108 @@ html {
 body {
     max-width: 1920px;
     width: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.8rem;
     margin: 0 auto;
+    background-color: #FBF7F4;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header"
+        "main  "
+        "footer";
 }
 
+main {
+    height: 70rem;
+    grid-area: main;
+}
+
+/*Header*/
 header {
     padding: 2rem;
+    background-color: #E8998D;
+    grid-area: header;
+}
+
+/*................................................Navbar................................................*/
+nav {
+    min-height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+}
+
+
+nav li {
+    list-style: none;
+    width: 100%;
+    padding: 1rem;
+}
+
+nav li a {
+    color: rgb(15, 15, 15);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    width: 100%;
+    transition: 0.7s ease;
+    white-space: nowrap;
+    padding: 2rem;
+    text-transform: uppercase;
+}
+
+.web-title {
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+
+/*.................Hamburgarmeny...............*/
+.hamburger {
+    display: block;
+    cursor: pointer;
+}
+
+/*streck till hamburgar meny*/
+.bar {
+    display: block;
+    width: 2.5rem;
+    height: 0.3rem;
+    margin: 0.5rem auto;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(15, 15, 15);
+}
+
+/*hover effekt*/
+
+nav li:hover {
+    width: 100%;
+}
+
+nav li a:hover {
+    background-color: #EED2CC;
+}
+
+nav li #active {
+    background-color: #EED2CC;
+}
+
+
+/*................................................Footer................................................*/
+footer {
+    background-color: #5B3758;
+    height: 15rem;
+    width: 100%;
+    max-width: 1920px;
+    grid-area: footer;
 }

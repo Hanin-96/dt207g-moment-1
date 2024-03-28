@@ -32,7 +32,7 @@ DROP TABLE IF EXISTS courses;
         course_code VARCHAR(10) NOT NULL,
         course_name TEXT NOT NULL,
         syllabus TEXT NOT NULL,
-        progression VARCHAR(1) NOT NULL,
+        progression CHAR(1) NOT NULL,
         course_post_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
 `);
