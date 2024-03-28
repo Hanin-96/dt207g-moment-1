@@ -2,6 +2,13 @@
 const { Client } = require("pg");
 require("dotenv").config();
 
+//Express
+const express = require("express");
+const app = express();
+app.set("view engine", "ejs");
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true })); //Aktivera formulärdata
+
 //Anslutning till databas
 const client = new Client({
     host: process.env.DB_HOST,
@@ -23,16 +30,13 @@ client.connect((error) => {
     }
 });
 
-//Skapa tabell till databas
-client.query (`
-DROP TABLE IF EXISTS courses;
+//Routing
+app.get("/", async(req, res) => {
+    res.render("index");
+});
 
-    CREATE TABLE courses(
-        course_id SERIAL PRIMARY KEY,
-        course_code VARCHAR(10) NOT NULL,
-        course_name TEXT NOT NULL,
-        syllabus TEXT NOT NULL,
-        progression VARCHAR(1) NOT NULL,
-        course_post_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )
-`);
+
+//Starta igång server
+app.listen(process.env.PORT, () => {
+    console.log("servern är startad på port: " + process.env.PORT );
+});
