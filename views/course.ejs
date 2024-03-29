@@ -6,40 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Lagra kurser i databas">
     <title>Moment 1</title>
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="/css/stylesheet.css">
 </head>
 
 <body>
     <header>
-        <h1>Startsida</h1>
         <nav>
+            <a href="/" class="web-title">Kurser</a>
             <ul>
-                <li><a href="#">Startsida</a></li>
-                <li id="active"><a href="#">Lägg till kurs</a></li>
-                <li><a href="#">Om</a></li>
+                <li><a href="/">Startsida</a></li>
+                <li id="active"><a href="/course">Lägg till kurs</a></li>
+                <li><a href="/about">Om</a></li>
             </ul>
+
+            <div class="menu-text">Meny</div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
+    <main>
+        <form action="/" method="post">
+            <label for="course-code">Kurskod</label>
+            <br>
+            <input type="text" id="course_code" name="course_code">
+            <br>
+            <label for="course-name">Kursnamn</label>
+            <input type="text" id="course_name" name="course_name">
+            <br>
+            <label for="syllabus">Kursplan</label>
+            <input type="text" id="syllabus" name="syllabus">
+            <br>
+            <label for="progression">Progression</label>
+            <select name="progression" id="progression">
+                <option value="A">A</option>
+                <option value="B">B</option>
+            </select>
+            <br>
+            <input type="submit" value="Lägg till ny kurs">
+        </form>
+    </main>
 
-    <form action="">
-        <label for="course-code"></label>
-        <br>
-        <input type="text" id="course-code" name="course-code">
-        <br>
-        <label for="course-name"></label>
-        <input type="text" id="course-name" name="course-name">
-        <br>
-        <label for="syllabus"></label>
-        <input type="text" id="syllabus" name="syllabus">
-        <br>
-        <label for="progression"></label>
-        <select name="progression" id="progression">
-            <option value="A">A</option>
-            <option value="B">B</option>
-        </select>
-        <br>
-        <input type="submit" value="Lägg till ny kurs">
-    </form>
+    <footer></footer>
 
 </body>
 

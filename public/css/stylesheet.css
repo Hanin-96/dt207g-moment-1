@@ -27,6 +27,11 @@ body {
 main {
     height: 70rem;
     grid-area: main;
+    max-width: 100rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+
 }
 
 /*Header*/
@@ -43,6 +48,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    max-width: 100rem;
+    width: 100%;
+    margin: 0 auto;
 }
 
 nav ul {
@@ -56,7 +64,6 @@ nav ul {
 nav li {
     list-style: none;
     width: 100%;
-    padding: 1rem;
 }
 
 nav li a {
@@ -68,19 +75,26 @@ nav li a {
     width: 100%;
     transition: 0.7s ease;
     white-space: nowrap;
-    padding: 2rem;
     text-transform: uppercase;
+    padding: 1rem;
 }
 
 .web-title {
-    font-size: 4rem;
+    font-size: 4.2rem;
     text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(15, 15, 15) ;
 }
 
 /*.................Hamburgarmeny...............*/
 .hamburger {
-    display: block;
+    display: none;
     cursor: pointer;
+}
+
+.menu-text {
+    display: none;
 }
 
 /*streck till hamburgar meny*/
@@ -101,10 +115,12 @@ nav li:hover {
 
 nav li a:hover {
     background-color: #EED2CC;
+    padding: 1rem;
 }
 
-nav li #active {
+nav #active a {
     background-color: #EED2CC;
+    padding: 1rem;
 }
 
 

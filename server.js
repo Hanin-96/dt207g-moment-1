@@ -5,8 +5,8 @@ require("dotenv").config();
 //Express
 const express = require("express");
 const app = express();
-app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.set("view engine", "ejs"); //view engine: EJS
+app.use(express.static("public")); //Statiska filer såsom .css, .js, img i katalogen public
 app.use(express.urlencoded({ extended: true })); //Aktivera formulärdata
 
 //Anslutning till databas
@@ -30,18 +30,51 @@ client.connect((error) => {
     }
 });
 
+/*......................................Routing.....................................*/
 //Routing index.ejs
-app.get("/", async(req, res) => {
-    res.render("index");
+app.get("/", async (req, res) => {
+
+    //Läs ut kursdata i index
+    client.query("SELECT * FROM courses", (error, result) => {
+        if (error) {
+            console.log("Det uppstod ett fel");
+        } else {
+            res.render("index", {
+                courses: result.rows,
+                name: "Hanin Farhan"
+            });
+        }
+    });
+
+});
+
+//Routing Course.ejs
+app.get("/course", async (req, res) => {
+    res.render("course");
+});
+
+app.post("/", async (req, res) => {
+    const courseCode = req.body.course_code;
+    const courseName = req.body.course_name;
+    const syllabus = req.body.syllabus;
+    const progression = req.body.progression;
+
+    //Sql Fråga
+    const result = await client.query("INSERT INTO courses(course_code, course_name, syllabus, progression) values ($1, $2, $3, $4)",
+        [courseCode, courseName, syllabus, progression]);
+
+    res.redirect("/")
+});
+
+//Routing about.ejs
+app.get("/about", async (req, res) => {
+    res.render("about");
 });
 
 
 //Starta igång server
 app.listen(process.env.PORT, () => {
-    console.log("servern är startad på port: " + process.env.PORT );
+    console.log("servern är startad på port: " + process.env.PORT);
 });
 
-//Routing Course.ejs
-app.get("/course", async(req, res) => {
-    res.render("course");
-});
+
