@@ -68,19 +68,34 @@ app.post("/", async (req, res) => {
         const result = await client.query("INSERT INTO courses(course_code, course_name, syllabus, progression) values ($1, $2, $3, $4)",
             [courseCode, courseName, syllabus, progression]);
 
-            res.redirect("/")
+        res.redirect("/")
 
     } else {
         error = "Du måste fylla i alla fält!"
-    }
+        res.render("course", {
+            error: error
+        });
 
-    res.render("course", {
-        error: error
-    });
+    }
 
 
 });
 
+app.get("/delete-course/:id", (req, res) => {
+    let courseId = req.params.id;
+
+    //Radera kurs från databas
+    const deletedResult = client.query("DELETE FROM courses WHERE course_id=$1;", [courseId], (error) => {
+        if (error) {
+            console.error(error.message);
+        }
+        
+        res.redirect("/");
+
+
+    });
+
+});
 
 //Routing about.ejs
 app.get("/about", async (req, res) => {
