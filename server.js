@@ -46,11 +46,14 @@ app.get("/", async (req, res) => {
         }
     });
 
+
 });
 
 //Routing Course.ejs
 app.get("/course", async (req, res) => {
-    res.render("course");
+    res.render("course", {
+        error: ""
+    });
 });
 
 app.post("/", async (req, res) => {
@@ -58,13 +61,26 @@ app.post("/", async (req, res) => {
     const courseName = req.body.course_name;
     const syllabus = req.body.syllabus;
     const progression = req.body.progression;
+    let error = "";
 
-    //Sql Fråga
-    const result = await client.query("INSERT INTO courses(course_code, course_name, syllabus, progression) values ($1, $2, $3, $4)",
-        [courseCode, courseName, syllabus, progression]);
+    if (courseCode != "" && courseName != "" && syllabus != "" && progression != "") {
+        //Sql Fråga för att lagra kursinformation
+        const result = await client.query("INSERT INTO courses(course_code, course_name, syllabus, progression) values ($1, $2, $3, $4)",
+            [courseCode, courseName, syllabus, progression]);
 
-    res.redirect("/")
+            res.redirect("/")
+
+    } else {
+        error = "Du måste fylla i alla fält!"
+    }
+
+    res.render("course", {
+        error: error
+    });
+
+
 });
+
 
 //Routing about.ejs
 app.get("/about", async (req, res) => {

@@ -11,8 +11,8 @@
 
 <body>
     <header>
+        <a href="/" class="web-title">Kurser</a>
         <nav>
-            <a href="/" class="web-title">Kurser</a>
             <ul>
                 <li><a href="/">Startsida</a></li>
                 <li id="active"><a href="/course">Lägg till kurs</a></li>
@@ -29,6 +29,9 @@
     </header>
     <main>
         <form action="/" method="post">
+            <%if (error != "") { %>
+                <p> <%= error%> </p>
+            <%}%>
             <label for="course-code">Kurskod</label>
             <br>
             <input type="text" id="course_code" name="course_code">
@@ -43,6 +46,7 @@
             <select name="progression" id="progression">
                 <option value="A">A</option>
                 <option value="B">B</option>
+                <option value="C">B</option>
             </select>
             <br>
             <input type="submit" value="Lägg till ny kurs">

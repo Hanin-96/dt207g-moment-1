@@ -36,9 +36,10 @@ main {
 
 /*Header*/
 header {
-    padding: 2rem;
     background-color: #E8998D;
     grid-area: header;
+    display: flex;
+    flex-direction: column;
 }
 
 /*................................................Navbar................................................*/
@@ -46,7 +47,7 @@ nav {
     min-height: 10rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     padding: 0 2rem;
     max-width: 100rem;
     width: 100%;
@@ -57,7 +58,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 6rem;
+    padding: 1rem 0;
 }
 
 
@@ -76,7 +77,7 @@ nav li a {
     transition: 0.7s ease;
     white-space: nowrap;
     text-transform: uppercase;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 .web-title {
@@ -84,7 +85,11 @@ nav li a {
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    color: rgb(15, 15, 15) ;
+    color: rgb(15, 15, 15);
+    margin: 0 auto;
+    max-width: 100rem;
+    width: 100%;
+    padding: 2rem;
 }
 
 /*.................Hamburgarmeny...............*/
@@ -114,15 +119,54 @@ nav li:hover {
 }
 
 nav li a:hover {
-    background-color: #EED2CC;
-    padding: 1rem;
+    background-color: #FBF7F4;
+    padding: 1rem 2rem;
 }
 
 nav #active a {
-    background-color: #EED2CC;
-    padding: 1rem;
+    background-color: #FBF7F4;
+    padding: 1rem 2rem;
 }
 
+/*................................................Startsida................................................*/
+
+.courses-container {
+    margin: 2rem 0 0 0;
+    background-color: white;
+    border: 2px solid #5B3758;
+    padding: 1rem;
+    max-width: 50rem;
+    width: 100%;
+    box-shadow: 5px 5px 1px #5B3758;
+}
+
+.courses-container ul:first-child {
+    margin: 2rem 0 0 0;
+}
+
+.courses-container li:first-child {
+    font-weight: bold;
+}
+
+.courses-container li {
+    list-style: none;
+}
+
+.courses-container li a{
+    text-decoration: none;
+    color: rgb(15, 15, 15);
+}
+
+#btn-erase {
+    background-color: #5B3758;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 25rem;
+    cursor: pointer;
+}
 
 /*................................................Footer................................................*/
 footer {

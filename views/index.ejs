@@ -7,12 +7,13 @@
     <meta name="description" content="Visa lagrade kurser i databas">
     <title>Moment 1</title>
     <link rel="stylesheet" href="/css/stylesheet.css">
+    <script src="https://kit.fontawesome.com/5f4c540c40.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
     <header>
+        <a href="/" class="web-title">Kurser</a>
         <nav>
-            <a href="/" class="web-title">Kurser</a>
             <ul>
                 <li id="active"><a href="/">Startsida</a></li>
                 <li><a href="/course">Lägg till kurs</a></li>
@@ -33,14 +34,20 @@
         <h2>Lagrade kurser</h2>
 
         <% courses.forEach((course)=> {%>
-        <ul>
-                <li><%= course.course_code.toUpperCase() %></li>
-                <li><%= course.course_name %></li>
-                <li><%= course.syllabus %></li>
-                <li><%= course.progression %></li>
-                
-        </ul>
-        <% }) %>
+            <ul class="courses-container">
+                <li>
+                    <%= course.course_code.toUpperCase() %>
+                </li>
+                <li>
+                    <%= course.course_name %>
+                </li>
+                <li><a href="<%= course.syllabus %>" target="_blank">Kursplan <i class="fa-solid fa-arrow-up-right-from-square"></i></a></i></li>
+                <li>
+                    <%= course.progression %>
+                </li>
+            </ul>
+            <button id="btn-erase">Ta bort kurs</button>
+            <% }) %>
 
 
     </main>
