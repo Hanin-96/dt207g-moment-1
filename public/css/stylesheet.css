@@ -34,6 +34,10 @@ main {
 
 }
 
+h1,h2 {
+    margin-bottom: 0.5rem;
+}
+
 /*Header*/
 header {
     background-color: #E8998D;
@@ -89,7 +93,7 @@ nav li a {
     margin: 0 auto;
     max-width: 50rem;
     width: 100%;
-    padding: 2rem 2rem 0 2rem;
+    padding: 2rem 2rem 0 1.5rem;
 }
 
 /*.................Hamburgarmeny...............*/
@@ -173,6 +177,8 @@ nav #active a {
     background-color: #0f0f0f;
 }
 
+/*................................................Lägg till kurs sida................................................*/
+
 form {
     background-color: white;
     border: 2px solid #5B3758;
@@ -221,12 +227,17 @@ form p {
     padding: 0.5rem;
 }
 
+/*................................................Om sidan................................................*/
+
 .about-text {
     max-width: 55ch;
     width: 100%;
     line-height: 150%;
 }
 
+p.about-text:nth-of-type(2) {
+    margin-bottom: 4rem;
+}
 /*................................................Footer................................................*/
 footer {
     background-color: #5B3758;
@@ -234,6 +245,16 @@ footer {
     width: 100%;
     max-width: 1920px;
     grid-area: footer;
+}
+
+footer ul {
+    color: white;
+    font-size: 1.6rem;
+    margin: 0 auto;
+    padding: 2rem;
+    list-style: none;
+    max-width: fit-content;
+    text-align: center;
 }
 
 /*................................................Media queries................................................*/
