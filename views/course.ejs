@@ -7,13 +7,14 @@
     <meta name="description" content="Lagra kurser i databas">
     <title>Moment 1</title>
     <link rel="stylesheet" href="/css/stylesheet.css">
+    <script src="/js/menu.js" defer></script>
 </head>
 
 <body>
     <header>
         <a href="/" class="web-title">Kurser</a>
         <nav>
-            <ul>
+            <ul class="nav-menu">
                 <li><a href="/">Startsida</a></li>
                 <li id="active"><a href="/course">Lägg till kurs</a></li>
                 <li><a href="/about">Om</a></li>
@@ -28,28 +29,29 @@
         </nav>
     </header>
     <main>
+        <h1>Lagra ny kurs</h1>
         <form action="/" method="post">
             <%if (error != "") { %>
                 <p> <%= error%> </p>
             <%}%>
-            <label for="course-code">Kurskod</label>
+            <label for="course_code">Kurskod:</label>
             <br>
-            <input type="text" id="course_code" name="course_code">
+            <input type="text" id="course_code" name="course_code" placeholder="DT057G">
             <br>
-            <label for="course-name">Kursnamn</label>
-            <input type="text" id="course_name" name="course_name">
+            <label for="course_name">Kursnamn:</label>
+            <input type="text" id="course_name" name="course_name" placeholder="Webbutveckling I">
             <br>
-            <label for="syllabus">Kursplan</label>
-            <input type="text" id="syllabus" name="syllabus">
+            <label for="syllabus">Kursplan:</label>
+            <input type="text" id="syllabus" name="syllabus" placeholder="https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT057G/">
             <br>
-            <label for="progression">Progression</label>
+            <label for="progression">Progression:</label>
             <select name="progression" id="progression">
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
             </select>
             <br>
-            <input type="submit" value="Lägg till ny kurs">
+            <input type="submit" value="Lägg till ny kurs" id="btn-submit">
         </form>
     </main>
 

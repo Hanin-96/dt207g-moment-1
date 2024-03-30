@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Om lagring av data">
     <title>Moment 1</title>
     <link rel="stylesheet" href="/css/stylesheet.css">
+    <script src="/js/menu.js" defer></script>
 </head>
+
 <body>
     <header>
         <a href="/" class="web-title">Kurser</a>
         <nav>
-            <ul>
+            <ul class="nav-menu">
                 <li><a href="/">Startsida</a></li>
                 <li><a href="/course">Lägg till kurs</a></li>
                 <li id="active"><a href="/about">Om</a></li>
@@ -26,9 +29,23 @@
         </nav>
     </header>
 
-    <main></main>
+    <main>
+        <h1>Om sidan</h1>
+        <p class="about-text">Webbplatsen består av tre webbsidor och går ut på att lagra kurser med information i en tabell som heter courses i databaser. På startsidan finns alla kurser som existerar i tabellen. Från startsidan kan kurser raderas från webbplatsen och databasens tabell courses.</p>
+
+        <br>
+
+        <p class="about-text">Sidan Lägg till kurs innehåller ett formulär som tar emot data och via sql fråga så lagras all information som skrivs i input fälten. Datan skrivs sedan ut på startsidan. Webbplatsen använder Postgresql som är kopplat till Render server och PgAdmin lokalt.
+        </p>
+
+        <br>
+
+        <h2>Slutsats</h2>
+        <p class="about-text">Jag tyckte uppgiften var väldigt lärorik och givande. Det är mycket smidigare att lagra all information i en databas i stället för tidigare användning av local Storage. Det känns också som att man har mer kontroll på hur information och data skrivs ut på sidorna. Anslutning till server var också mer praktiskt än användning av Parcel i tidigare kurs.</p>
+    </main>
 
     <footer></footer>
-    
+
 </body>
+
 </html>

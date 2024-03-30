@@ -41,7 +41,6 @@ app.get("/", async (req, res) => {
         } else {
             res.render("index", {
                 courses: result.rows,
-                name: "Hanin Farhan"
             });
         }
     });
@@ -89,7 +88,7 @@ app.get("/delete-course/:id", (req, res) => {
         if (error) {
             console.error(error.message);
         }
-        
+
         res.redirect("/");
 
 
