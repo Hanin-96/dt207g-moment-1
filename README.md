@@ -12,4 +12,5 @@ Sidan Lägg till kurs innehåller ett formulär som tar emot data och via sql fr
 Både webbplatsen och databasen har kopplats till tjänsten Render.
 <br>
 <br>
-***Arbetet har gjorts i git branch develop, dock finns det även arbete som har gjorts i main branch mot utvecklingens slut.***
+
+_Arbetet har gjorts i git branch develop, dock finns det även arbete som har gjorts i main branch mot utvecklingens slut._
