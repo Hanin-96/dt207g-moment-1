@@ -1,4 +1,4 @@
-# Backend-baserad webbutveckling moment 1
+# Backend-baserad webbutveckling moment 1 
 <br>
 Webbplatsen består av tre webbsidor. Uppgiften gick ut på att skapa en serverbaserad webbplats med hjälp av express, ejs filer och databas.
 <br>
@@ -12,4 +12,4 @@ Sidan Lägg till kurs innehåller ett formulär som tar emot data och via sql fr
 Både webbplatsen och databasen har kopplats till tjänsten Render.
 <br>
 <br>
-_Arbetet har gjorts i git branch develop, dock finns det även arbete som har gjorts i main branch mot utvecklingens slut._
+***Arbetet har gjorts i git branch develop, dock finns det även arbete som har gjorts i main branch mot utvecklingens slut.***
