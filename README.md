@@ -6,6 +6,7 @@ Kurser som lagras på kurssidan använder sig av databasen postgresql och lagras
 <br>
 På startsidan finns alla kurser som existerar i tabellen. Från startsidan kan kurser raderas från webbplatsen och databasens tabell courses.
 <br>
+<br>
 Sidan Lägg till kurs innehåller ett formulär som tar emot data och via sql fråga så lagras all information som skrivs i input fälten. Datan skrivs sedan ut på startsidan.
 <br>
 Både webbplatsen och databasen har kopplats till tjänsten Render.
