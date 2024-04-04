@@ -161,7 +161,7 @@ nav #active a {
     color: #0f0f0f;
 }
 
-#btn-erase {
+.btn-erase {
     background-color: #5B3758;
     color: white;
     border: none;
@@ -173,7 +173,7 @@ nav #active a {
     text-decoration: none;
 }
 
-#btn-erase:hover {
+.btn-erase:hover {
     background-color: #0f0f0f;
 }
 
